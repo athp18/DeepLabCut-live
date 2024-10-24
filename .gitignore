@@ -16,6 +16,8 @@ __pycache__/
 # C extensions
 *.so
 
+dlclive/pytorch
+
 # Distribution / packaging
 .Python
 build/
