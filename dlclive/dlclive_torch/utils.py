@@ -17,6 +17,13 @@ from deeplabcut.pose_estimation_pytorch.data.dlcloader import DLCLoader
 
 
 class ModelWrapper(nn.Module):
+    """
+    Wrapper to convert a DeepLabCut PyTorch model to a TorchScript model. 
+    Since TorchScript excepts a tuple rather than a model dict, this class wrapps the model dict into a named tuple for easy exporting.
+
+    Args:
+        model: Trained DeepLabCut model
+    """
     def __init__(self, model):
         super(ModelWrapper, self).__init__()
         self.model = model
